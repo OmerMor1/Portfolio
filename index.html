@@ -224,7 +224,7 @@
                 class="projects__row-img"
                 loading="lazy"
               />
-              <div class="video-overlay">
+              <div class="video-overlay" style="background: url('./assets/png/learningenglishpic.png') no-repeat center center; background-size: cover;">
                 <video id="myVideo1"
                   src="./assets/png/learning4.mp4"
                   type="video/mp4"
@@ -261,7 +261,7 @@
                 class="projects__row-img"
                 loading="lazy"
               />
-              <div class="video-overlay">
+              <div class="video-overlay" style="background: url('./assets/png/smartwaypic.png') no-repeat center center; background-size: cover;">
                 <video id="myVideo2"
                   src="./assets/png/7.mp4"
                   type="video/mp4"
@@ -298,7 +298,7 @@
                 class="projects__row-img"
                 loading="lazy"
               />
-              <div class="video-overlay">
+              <div class="video-overlay" style="background: url('./assets/png/kobimorpic.png') no-repeat center center; background-size: cover;">
                 <video id="myVideo3"
                   src="./assets/png/kobimor3.mp4"
                   type="video/mp4"
@@ -412,39 +412,44 @@
       const form = document.getElementById("contactForm");
       form.addEventListener("submit", sendMail);
     </script>
-    <script>
-      window.onload = function() {
-        var videos = ['myVideo1', 'myVideo2', 'myVideo3'];
-        var buttons = ['playButton1', 'playButton2', 'playButton3'];
-      
-        videos.forEach(function(videoId, index) {
-          var video = document.getElementById(videoId);
-          var btn = document.getElementById(buttons[index]);
-      
-          function playPause() {
-            if (video.paused) {
-              video.play();
-              btn.style.display = 'none'; // Hide the button after it's clicked
-            }
-          }
-      
-          btn.onclick = playPause;
-      
-          // Automatically play the video if the screen size is more than 37.5em
-          var mql = window.matchMedia("(min-width: 37.5em)");
-          mql.addListener(function() { handleScreenSizeChange(mql, video); });
-          handleScreenSizeChange(mql, video); // Call the function initially to check the screen size at page load
-        });
-      
-        function handleScreenSizeChange(mql, video) {
-          if (mql.matches) {
-            // The screen size is more than 37.5em
-            if (video.paused) {
-              video.play();
-            }
+   <script>
+    window.onload = function() {
+      var videos = ['myVideo1', 'myVideo2', 'myVideo3'];
+      var buttons = ['playButton1', 'playButton2', 'playButton3'];
+    
+      videos.forEach(function(videoId, index) {
+        var video = document.getElementById(videoId);
+        var btn = document.getElementById(buttons[index]);
+    
+        function playPause() {
+          if (video.paused) {
+            video.style.display = 'block'; // Show the video when the button is clicked
+            video.play();
+            btn.style.display = 'none'; // Hide the button after it's clicked
           }
         }
+    
+        btn.onclick = playPause;
+    
+      
+          // Automatically play the video if the screen size is more than 37.5em
+    var mql = window.matchMedia("(min-width: 37.5em)");
+    mql.addListener(function() { handleScreenSizeChange(mql, video); });
+    handleScreenSizeChange(mql, video); // Call the function initially to check the screen size at page load
+  });
+
+  function handleScreenSizeChange(mql, video) {
+    if (mql.matches) {
+      // The screen size is more than 37.5em
+      video.style.display = 'block'; // Show the video on larger screens
+      if (video.paused) {
+        video.play();
       }
-      </script>
+    } else {
+      video.style.display = 'none'; // Hide the video on smaller screens
+    }
+  }
+}
+</script>
   </body>
 </html>
