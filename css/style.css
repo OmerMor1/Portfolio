@@ -442,7 +442,38 @@ textarea {
     font-size: 1.7rem;
   }
 }
+#playButton1 {
+  display: none;
+}
 
+/* Show the play button when the screen size is 37.5em or less */
+@media screen and (max-width: 37.5em) {
+  #playButton1 {
+    display: block;
+  }
+}
+
+#playButton2 {
+  display: none;
+}
+
+/* Show the play button when the screen size is 37.5em or less */
+@media screen and (max-width: 37.5em) {
+  #playButton2 {
+    display: block;
+  }
+}
+
+#playButton3 {
+  display: none;
+}
+
+/* Show the play button when the screen size is 37.5em or less */
+@media screen and (max-width: 37.5em) {
+  #playButton3 {
+    display: block;
+  }
+}
 .contact {
   background: linear-gradient(
       to right,

@@ -28,6 +28,8 @@
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
   </head>
   <body>
     <header class="header">
@@ -224,15 +226,17 @@
                 loading="lazy"
               />
               <div class="video-overlay">
-                <video
+                <video id="myVideo1"
                   src="./assets/png/learning4.mp4"
                   type="video/mp4"
-                  autoplay
                   muted
                   loop
                 >
                   Your browser does not support the video tag.
                 </video>
+                <button id="playButton1" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: none; border: none;">
+                  <i class="fa fa-play" style="color: rgb(188, 174, 174);"></i>
+                </button>
               </div>
             </div>
             <div class="projects__row-content">
@@ -259,15 +263,17 @@
                 loading="lazy"
               />
               <div class="video-overlay">
-                <video
+                <video id="myVideo2"
                   src="./assets/png/7.mp4"
                   type="video/mp4"
-                  autoplay
                   muted
                   loop
                 >
                   Your browser does not support the video tag.
                 </video>
+                <button id="playButton2" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: none; border: none;">
+                  <i class="fa fa-play" style="color: rgb(188, 174, 174);"></i>
+                </button>
               </div>
             </div>
             <div class="projects__row-content">
@@ -294,15 +300,17 @@
                 loading="lazy"
               />
               <div class="video-overlay">
-                <video
+                <video id="myVideo3"
                   src="./assets/png/kobimor3.mp4"
                   type="video/mp4"
-                  autoplay
                   muted
                   loop
                 >
                   Your browser does not support the video tag.
                 </video>
+                <button id="playButton3" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: none; border: none;">
+                  <i class="fa fa-play" style="color: rgb(188, 174, 174);"></i>
+                </button>
               </div>
             </div>
             <div class="projects__row-content">
@@ -414,5 +422,39 @@
       const form = document.getElementById("contactForm");
       form.addEventListener("submit", sendMail);
     </script>
+    <script>
+      window.onload = function() {
+        var videos = ['myVideo1', 'myVideo2', 'myVideo3'];
+        var buttons = ['playButton1', 'playButton2', 'playButton3'];
+      
+        videos.forEach(function(videoId, index) {
+          var video = document.getElementById(videoId);
+          var btn = document.getElementById(buttons[index]);
+      
+          function playPause() {
+            if (video.paused) {
+              video.play();
+              btn.style.display = 'none'; // Hide the button after it's clicked
+            }
+          }
+      
+          btn.onclick = playPause;
+      
+          // Automatically play the video if the screen size is more than 37.5em
+          var mql = window.matchMedia("(min-width: 37.5em)");
+          mql.addListener(function() { handleScreenSizeChange(mql, video); });
+          handleScreenSizeChange(mql, video); // Call the function initially to check the screen size at page load
+        });
+      
+        function handleScreenSizeChange(mql, video) {
+          if (mql.matches) {
+            // The screen size is more than 37.5em
+            if (video.paused) {
+              video.play();
+            }
+          }
+        }
+      }
+      </script>
   </body>
 </html>
