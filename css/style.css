@@ -1,17 +1,3 @@
-/*
-0 - 600px:      Phone
-600 - 900px:    Tablet portrait
-900 - 1200px:   Tablet landscape
-[1200 - 1800] is where our normal styles apply
-1800px + :      Big desktop
-$breakpoint arguement choices:
-- phone
-- tab-port
-- tab-land
-- big-desktop
-
-Inside media queries 1em is always 16px i.e 1em = 16px at every screen size only inside media queries
-*/
 *,
 *::after,
 *::before {
@@ -380,16 +366,15 @@ textarea {
   margin-bottom: 0;
 }
 .projects__row-img-cont {
-  /* overflow: hidden; */
   position: relative;
 }
 
 .video-overlay {
   position: absolute;
-  top: 10%; /* Adjust as needed to position the video within the laptop screen */
+  top: 10%;
   width: 63.65%;
   left: 13.4%;
-  height: 75%; /* Adjust as needed to size the video within the laptop screen */
+  height: 75%;
 }
 
 .video-overlay video {
@@ -446,7 +431,6 @@ textarea {
   display: none;
 }
 
-/* Show the play button when the screen size is 37.5em or less */
 @media screen and (max-width: 37.5em) {
   #playButton1 {
     display: block;
@@ -457,7 +441,6 @@ textarea {
   display: none;
 }
 
-/* Show the play button when the screen size is 37.5em or less */
 @media screen and (max-width: 37.5em) {
   #playButton2 {
     display: block;
@@ -468,7 +451,6 @@ textarea {
   display: none;
 }
 
-/* Show the play button when the screen size is 37.5em or less */
 @media screen and (max-width: 37.5em) {
   #playButton3 {
     display: block;
@@ -527,12 +509,6 @@ textarea {
   background: #f0f0f0;
   border-radius: 5px;
   font-weight: 600;
-  /* Code for Modern Browsers */
-  /* Code for WebKit, Blink, Edge */
-  /* Code for Internet Explorer 10-11 */
-  /* Code for Microsoft Edge */
-  /* Code for Mozilla Firefox 4 to 18 */
-  /* Code for Mozilla Firefox 19+ */
 }
 .contact__form-input::placeholder {
   color: #999;
