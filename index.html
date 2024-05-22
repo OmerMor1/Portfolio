@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Dopefolio</title>
-    <meta name="description" content="Portfolio Template for Developer" />
+    <title>Portfolio</title>
+    <meta name="description" content="Omer Mor Portfoli" />
 
     <link rel="stylesheet" href="css/style.css" />
 
@@ -423,30 +423,28 @@
     
         function playPause() {
           if (video.paused) {
-            video.style.display = 'block'; // Show the video when the button is clicked
+            video.style.display = 'block';
             video.play();
-            btn.style.display = 'none'; // Hide the button after it's clicked
+            btn.style.display = 'none'; 
           }
         }
     
         btn.onclick = playPause;
     
       
-          // Automatically play the video if the screen size is more than 37.5em
     var mql = window.matchMedia("(min-width: 37.5em)");
     mql.addListener(function() { handleScreenSizeChange(mql, video); });
-    handleScreenSizeChange(mql, video); // Call the function initially to check the screen size at page load
+    handleScreenSizeChange(mql, video);
   });
 
   function handleScreenSizeChange(mql, video) {
     if (mql.matches) {
-      // The screen size is more than 37.5em
-      video.style.display = 'block'; // Show the video on larger screens
+      video.style.display = 'block'; 
       if (video.paused) {
         video.play();
       }
     } else {
-      video.style.display = 'none'; // Hide the video on smaller screens
+      video.style.display = 'none'; 
     }
   }
 }
