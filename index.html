@@ -221,6 +221,76 @@
                 class="projects__row-img"
                 loading="lazy"
               />
+              <div class="video-overlay" style="background: url('./assets/png/codecollab.png') no-repeat center center; background-size: cover;">
+                <video id="myVideo4"
+                  src="./assets/png/codecollab4.mp4"
+                  type="video/mp4"
+                  muted
+                  loop
+                >
+                  Your browser does not support the video tag.
+                </video>
+                <button id="playButton4" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: none; border: none;">
+                  <i class="fa fa-play" style="color: rgb(53, 53, 53); font-size: 2em;"></i>
+                </button>
+              </div>
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">Code Collab</h3>
+              <p class="projects__row-content-desc">
+                A collaborative platform for practicing JavaScript, where the teacher creates coding exercises and students solve them in real-time. The site uses WebSockets to facilitate live interaction and code sharing between users.
+              </p>
+              <a
+                href="https://github.com/OmerMor1/Code-Collab-Omer-Mor"
+                class="btn btn--med btn--theme dynamicBgClr"
+                target="_blank"
+                >Code</a
+              >
+            </div>
+          </div>
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img
+                src="./assets/jpeg/project-mockup-example.jpeg"
+                alt="Software Screenshot"
+                class="projects__row-img"
+                loading="lazy"
+              />
+              <div class="video-overlay" style="background: url('./assets/png/nteflixpic.png') no-repeat center center; background-size: cover;">
+                <video id="myVideo5"
+                  src="./assets/png/netflixclone.mp4"
+                  type="video/mp4"
+                  muted
+                  loop
+                >
+                  Your browser does not support the video tag.
+                </video>
+                <button id="playButton5" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: none; border: none;">
+                  <i class="fa fa-play" style="color: rgb(53, 53, 53); font-size: 2em;"></i>
+                </button>
+              </div>
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">Netflix Clone</h3>
+              <p class="projects__row-content-desc">
+                A simulation of the Netflix platform, fetching content from an external API. It allows users to watch content, save their viewing history, and manage user authentication.
+              </p>
+              <a
+                href="https://github.com/OmerMor1/Netflix-Clone"
+                class="btn btn--med btn--theme dynamicBgClr"
+                target="_blank"
+                >Code</a
+              >
+            </div>
+          </div>
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img
+                src="./assets/jpeg/project-mockup-example.jpeg"
+                alt="Software Screenshot"
+                class="projects__row-img"
+                loading="lazy"
+              />
               <div class="video-overlay" style="background: url('./assets/png/learningenglishpic.png') no-repeat center center; background-size: cover;">
                 <video id="myVideo1"
                   src="./assets/png/learning4.mp4"
@@ -411,8 +481,8 @@
     </script>
    <script>
     window.onload = function() {
-      var videos = ['myVideo1', 'myVideo2', 'myVideo3'];
-      var buttons = ['playButton1', 'playButton2', 'playButton3'];
+      var videos = ['myVideo1', 'myVideo2', 'myVideo3', 'myVideo4', 'myVideo5'];
+      var buttons = ['playButton1', 'playButton2', 'playButton3', 'playButton4', 'playButton5'];
     
       videos.forEach(function(videoId, index) {
         var video = document.getElementById(videoId);
